@@ -60,6 +60,8 @@ Antes de iniciar, você deve possuir:
    python manage.py runserver
    ```
 
+---
+
 ### :large_orange_diamond: Execução da aplicação fron-end:
 1. Mova para o diretório da aplicação:
    ```bash
