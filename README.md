@@ -49,6 +49,7 @@ Antes de iniciar, você deve possuir:
    ```
 4. Executar a instalação das dependências e em seguida as migrações do Django:
    ```bash
+   pip install requests
    pip install django
    pip install djangorestframework
    pip install django-cors-headers
