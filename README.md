@@ -68,7 +68,7 @@ Antes de iniciar, você deve possuir:
 1. Mova para o diretório da aplicação:
    ```bash
    cd ..
-   cd front
+   cd front/carteira-clientes
    ```
 2. Instalar as dependências do projeto:
    ```bash
