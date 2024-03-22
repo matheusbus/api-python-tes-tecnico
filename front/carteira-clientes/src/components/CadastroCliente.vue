@@ -26,23 +26,26 @@
         },
         methods: {
             consultarCnpjReceita() {
-                let cnpj_formatado = this.cnpj_input.trim().replace('/', '').replace('.', '').replace('-', '')
+                let padrao = /[0-9]/g;
+                let cnpj_formatado = this.cnpj_input.match(padrao).join('');
+                console.log(`https://www.receitaws.com.br/v1/cnpj/${cnpj_formatado}`);
                 if (cnpj_formatado != '') {
                     try {
                         fetch(`https://www.receitaws.com.br/v1/cnpj/${cnpj_formatado}`)
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('Erro ao consultar CNPJ na Receita Federal');
-                                }
-                                return response.json();
-                            })
-                            .then(data => {
-                                this.dados_receita = data;
-                            })
-                            .catch(error => {
-                                console.log(error.message);
-                                alert(error.message);
-                            });
+                        .then(response => {
+                            console.log(response.status)
+                            if (!response.status != 200) {
+                                throw new Error('Erro ao consultar CNPJ na Receita Federal: ' + response.status);
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            this.dados_receita = data;
+                        })
+                        .catch(error => {
+                            console.log(error.message);
+                            alert(error.message);
+                        });
                     } catch (error) {
                         console.log(error.message);
                         alert(error.message);
