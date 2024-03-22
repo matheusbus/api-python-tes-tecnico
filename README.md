@@ -60,6 +60,7 @@ Antes de iniciar, você deve possuir:
    ```bash
    python manage.py runserver
    ```
+6. URL da API: [http://localhost:8000/api/clientes](http://localhost:8000/api/clientes/)
 
 ---
 
